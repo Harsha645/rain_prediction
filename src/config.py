@@ -35,3 +35,24 @@ FEATURE_COLS = [
 # ─── Train / Test Split ───────────────────────────────────────────────────────
 TEST_SIZE    = 0.20   # 20% of data reserved for testing
 RANDOM_STATE = 42     # Fixed seed for reproducibility
+
+# ─── Decision Tree Hyperparameters ────────────────────────────────────────────
+DT_PARAMS = {
+    'max_depth'         : 10,        # Maximum depth of the tree
+    'min_samples_split' : 20,        # Minimum samples required to split a node
+    'min_samples_leaf'  : 10,        # Minimum samples required at a leaf node
+    'class_weight'      : 'balanced',# Handle class imbalance automatically
+    'random_state'      : RANDOM_STATE
+}
+
+# ─── c Hyperparameters ────────────────────────────────────────────
+RF_PARAMS = {
+    'n_estimators'      : 100,       # Number of trees in the forest
+    'max_depth'         : 15,        # Maximum depth of each tree
+    'min_samples_split' : 10,        # Minimum samples required to split a node
+    'min_samples_leaf'  : 5,         # Minimum samples required at a leaf node
+    'max_features'      : 'sqrt',    # Features to consider per split (sqrt rule)
+    'class_weight'      : 'balanced',# Handle class imbalance automatically
+    'n_jobs'            : -1,        # Use all available CPU cores
+    'random_state'      : RANDOM_STATE
+}
