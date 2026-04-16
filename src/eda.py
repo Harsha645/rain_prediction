@@ -1,6 +1,4 @@
 # =============================================================================
-# eda.py
-#
 # Generates visualisations to understand the dataset before modelling:
 #   - Precipitation distribution
 #   - City-level precipitation box plots
