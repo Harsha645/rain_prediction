@@ -1,0 +1,28 @@
+# Dataset (too large for GitHub - download from Kaggle)
+data/*.csv
+data/*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Outputs
+outputs/*.png
+outputs/*.jpg
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Anaconda environments
+.conda/
+*.conda
