@@ -2,17 +2,17 @@
 # Configuration file for the Rain Prediction project.
 # All constants, file paths, model parameters and feature definitions
 
-# ─── Dataset ──────────────────────────────────────────────────────────────────
+# Dataset
 import os as _os
 DATASET_PATH = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), 'data', 'SriLanka_Weather_Dataset_V1.csv')
 
-# ─── Target Variable ──────────────────────────────────────────────────────────
+# Target Variable
 # A day is classified as 'rainy' if precipitation exceeds this threshold (mm)
 # 1.0mm is the standard World Meteorological Organization (WMO) threshold
 RAIN_THRESHOLD = 1.0
 TARGET_COLUMN  = 'RainTomorrow'
 
-# ─── Feature Columns ──────────────────────────────────────────────────────────
+# Feature Columns
 # These are the 14 weather features used as input to the ML models.
 # All are numeric daily measurements from the Open-Meteo API.
 FEATURE_COLS = [
@@ -32,11 +32,11 @@ FEATURE_COLS = [
     'et0_fao_evapotranspiration'    # Reference evapotranspiration (mm)
 ]
 
-# ─── Train / Test Split ───────────────────────────────────────────────────────
+# Train / Test Split
 TEST_SIZE    = 0.20   # 20% of data reserved for testing
 RANDOM_STATE = 42     # Fixed seed for reproducibility
 
-# ─── Decision Tree Hyperparameters ────────────────────────────────────────────
+# Decision Tree Hyperparameters
 DT_PARAMS = {
     'max_depth'         : 10,        # Maximum depth of the tree
     'min_samples_split' : 20,        # Minimum samples required to split a node
@@ -45,7 +45,7 @@ DT_PARAMS = {
     'random_state'      : RANDOM_STATE
 }
 
-# ─── c Hyperparameters ────────────────────────────────────────────
+# Hyperparameters
 RF_PARAMS = {
     'n_estimators'      : 100,       # Number of trees in the forest
     'max_depth'         : 15,        # Maximum depth of each tree
