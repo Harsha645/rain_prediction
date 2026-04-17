@@ -35,3 +35,30 @@ def train_decision_tree(X_train_scaled, y_train) -> DecisionTreeClassifier:
     print('Decision Tree training complete.')
 
     return dt_model
+
+def train_random_forest(X_train_scaled, y_train) -> RandomForestClassifier:
+    """
+    Train a Random Forest Classifier on the training data.
+
+    Parameters
+    ----------
+    X_train_scaled : np.ndarray  Scaled training features
+    y_train        : pd.Series   Training labels
+
+    Returns
+    -------
+    RandomForestClassifier  Trained model
+    """
+    print('Training Random Forest...')
+
+    # Initialise with hyperparameters from config
+    rf_model = RandomForestClassifier(**RF_PARAMS)
+
+    # Train the model — 100 trees are built in parallel on bootstrap samples
+    rf_model.fit(X_train_scaled, y_train)
+
+    print(f'  Number of Trees : {rf_model.n_estimators}')
+    print(f'  Features/Split  : {rf_model.max_features}')
+    print('Random Forest training complete.')
+
+    return rf_model
