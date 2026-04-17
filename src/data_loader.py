@@ -1,5 +1,5 @@
 
-# Loading the SPerforms initial validation: shape check,ri Lanka Weather Dataset from CSV.
+# Loading the SPerforms initial validation: shape check,Sri Lanka Weather Dataset from CSV.
 # Check columns , missing value report.
 
 import pandas as pd
